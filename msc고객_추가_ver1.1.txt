@@ -1,0 +1,16 @@
+Create table msc고객 (
+고객명 VARCHAR2(20),
+면허ID VARCHAR2(20) PRIMARY KEY,
+고객등급 VARCHAR2(20),
+누적마일리지 NUMBER,
+고객연락처 VARCHAR2(20),
+foreign key(고객등급) references msc등급(고객등급) on delete cascade
+);
+
+INSERT INTO msc고객 VALUES ('김우송', 'X0001', 'A', 860, '010-3213-6685');
+INSERT INTO msc고객 VALUES ('송원석', 'X0002', 'B', 440, '010-2271-3298');
+INSERT INTO msc고객 VALUES ('이예현', 'Y0001', 'S', 1350, '010-1212-3456');
+INSERT INTO msc고객 VALUES ('이효열', 'Y0002', 'B', 480, '010-2783-4579');
+INSERT INTO msc고객 VALUES ('홍인표', 'Y0003', 'S', 1590, '010-1285-8521');
+INSERT INTO msc고객 VALUES ('박기쁨', 'Y0004', 'C', 180, '010-7281-3024');
+INSERT INTO msc고객 VALUES ('왕슬픔', 'Y0005', 'D', 50, '010-5261-7762');
