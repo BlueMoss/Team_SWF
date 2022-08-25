@@ -14,3 +14,6 @@ insert into msc모델 values('F8스파이더',2838, 15000, '페라리', 15);
 
 insert into msc모델 values('레인지로버',1001, 8000, '랜드로버', 7);
 insert into msc모델 values('카이엔',6666, 11000, '포르쉐', 10);
+insert into msc모델 values('시론',1234, 50000, '부가티', 50);
+insert into msc모델 values('S클래스',5678, 10000, '벤츠', 10);
+
