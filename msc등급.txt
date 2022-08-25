@@ -1,0 +1,11 @@
+create table msc등급(
+고객등급 varchar2(30) primary key,
+달성조건 number,
+할인율 varchar2(30)
+);
+
+insert into msc등급 values('S', 1000, '30%');
+insert into msc등급 values('A', 500, '15%');
+insert into msc등급 values('B', 250, '10%');
+insert into msc등급 values('C', 100, '5%');
+insert into msc등급 values('D', 0, '1%');
