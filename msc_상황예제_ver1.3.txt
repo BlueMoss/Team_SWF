@@ -1,0 +1,18 @@
+--송원석 고객이 이용한 지점의 지역을 출력하라.
+select 지역 from msc지점 where 지점ID = (select 지점ID from msc예약 where 면허ID = (select 면허ID from msc고객 where 고객명='송원석'));
+
+--8월에 예약한 고객이름을 출력하라
+select 고객명 from msc고객 where 면허ID in ( select 면허ID from msc예약 where 예약일 between '22/08/01' and '22/08/31');
+
+-- 가장 많이 예약된 차이름을 출력하라.
+select 번호판,(select 차이름 from msc모델 where msc모델.번호판=msc예약.번호판) 차이름
+from msc예약
+group by 번호판
+having count(*) in(select max(count(*))
+from msc예약
+group by 번호판);
+
+--이효열 고객의 할인율을 출력하라
+select 할인율
+from msc등급
+where 고객등급 = (select 고객등급 from msc고객 where 고객명='이효열');
