@@ -1,0 +1,27 @@
+Create table msc예약 (
+대여번호 number primary key,
+면허ID varchar2(20),
+지점ID number,
+번호판 number,
+예약일 date,
+반납일 date,
+foreign key(면허ID) references msc고객(면허ID) on delete cascade,
+foreign key(지점ID) references msc지점(지점ID) on delete cascade,
+foreign key(번호판) references msc모델(번호판) on delete cascade
+);
+
+insert into msc예약 values (101, 'X0002', 117, 2838, '2022-08-26', '2022-08-30');
+insert into msc예약 values (102, 'Y0003', 113, 8263, '2022-08-31', '2022-09-04');
+insert into msc예약 values (103, 'Y0002', 114, 3343, '2022-09-09', '2022-09-16');
+insert into msc예약 values (104, 'X0001', 112, 9867, '2022-09-14', '2022-09-17');
+insert into msc예약 values (105, 'Y0001', 119, 4217, '2022-09-22', '2022-09-30');
+
+insert into msc예약 values (106, 'Y0003', 113, 3343, '2022-09-28', '2022-10-03');
+insert into msc예약 values (107, 'Y0004', 119, 9867, '2022-10-02', '2022-10-13');
+insert into msc예약 values (108, 'Y0006', 112, 1234, '2022-08-29', '2022-09-09');
+insert into msc예약 values (109, 'Y0007', 112, 5678, '2022-11-01', '2022-11-02');
+insert into msc예약 values (110, 'X0003', 113, 4217, '2022-12-01', '2022-12-04');
+insert into msc예약 values (111, 'X0004', 117, 2838, '2022-11-03', '2022-11-05');
+
+INSERT INTO MSC예약 VALUES (112, 'X0005', 114, 4812, '2022-09-07', '2022-09-10');
+INSERT INTO MSC예약 VALUES (113, 'Y0008', 119, 8981, '2022-09-11', '2022-09-14');

@@ -1,0 +1,10 @@
+--9월 15일 전에 차를 빌린 고객의 수는?--
+select count(고객명)
+from msc고객, msc예약
+where msc고객.면허ID=msc예약.면허ID and 예약일<'2022-09-15';
+
+--군산지점에서 차를 빌린 고객의 이름을 조회하기--
+select msc고객.고객명
+from msc지점, msc예약, msc고객
+where msc지점.지점ID=msc예약.지점ID and msc예약.면허ID=msc고객.면허ID
+and 지역 = '군산';

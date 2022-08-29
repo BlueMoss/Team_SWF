@@ -1,0 +1,26 @@
+[예약테이블 예제]
+
+--9월 15일 전에 차를 빌린 고객의 수는?--
+select count(고객명)
+from msc고객, msc예약
+where msc고객.면허ID=msc예약.면허ID and 예약일<'2022-09-15';
+
+--군산지점에서 차를 빌린 고객의 이름을 조회하기--
+select msc고객.고객명
+from msc지점, msc예약, msc고객
+where msc지점.지점ID=msc예약.지점ID and msc예약.면허ID=msc고객.면허ID
+and 지역 = '군산';
+
+[고객테이블 예제]
+
+-- 모든 고객의 고객명과 예약한 차이름을 조회 --
+
+= SELECT 고객명 , MSC모델.차이름
+from MSC고객, MSC예약, MSC모델
+where MSC고객.면허ID = MSC예약.면허ID AND MSC예약.번호판 = MSC모델.번호판;
+
+-- 박신오 고객의 고객명과 렌트한 차이름을 표시 --
+
+= SELECT MSC고객.고객명 ,MSC모델.차이름
+FROM MSC고객,MSC예약,MSC모델
+WHERE MSC고객.면허ID = MSC예약.면허ID AND MSC예약.번호판 = MSC모델.번호판 AND MSC고객.고객명 LIKE '박신오';
